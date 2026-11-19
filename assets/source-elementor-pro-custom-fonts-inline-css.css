@@ -1,0 +1,38 @@
+
+@font-face {
+	font-family: 'TT Fors';
+	font-style: normal;
+	font-weight: 300;
+	font-display: auto;
+	src: url("https://wellhead.ru/wp-content/uploads/2025/02/tt-fors-light-1.ttf") format('truetype');
+}
+@font-face {
+	font-family: 'TT Fors';
+	font-style: normal;
+	font-weight: 400;
+	font-display: auto;
+	src: url("https://wellhead.ru/wp-content/uploads/2025/02/tt-fors-regular-1.ttf") format('truetype');
+}
+@font-face {
+	font-family: 'TT Fors';
+	font-style: normal;
+	font-weight: 500;
+	font-display: auto;
+	src: url("https://wellhead.ru/wp-content/uploads/2025/02/tt-fors-medium-1.ttf") format('truetype');
+}
+@font-face {
+	font-family: 'TT Fors';
+	font-style: normal;
+	font-weight: 600;
+	font-display: auto;
+	src: url("https://wellhead.ru/wp-content/uploads/2025/02/tt-fors-bold-1.ttf") format('truetype');
+}
+@font-face {
+	font-family: 'TT Fors';
+	font-style: normal;
+	font-weight: 700;
+	font-display: auto;
+	src: url("https://wellhead.ru/wp-content/uploads/2025/02/tt-fors-black-1.ttf") format('truetype');
+}
+
+/*# sourceURL=elementor-pro-custom-fonts-inline-css */
