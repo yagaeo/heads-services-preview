@@ -55,15 +55,8 @@
   gap: clamp(25px, 4.5vw, 76px);
   padding: clamp(25px, 3.8vw, 60px) 0 30px;
 }
-.heads-geo > .heads-breadcrumbs + .hg-hero {
-  padding-top: 18px;
-}
-.hg-eyebrow {
-  display: inline-block;
-  margin: 0 0 18px;
-  font: 14px/1.35 "TT Fors Bold", sans-serif;
-  text-decoration: none;
-  color: var(--hg-muted);
+.hg-hero-copy {
+  align-self: start;
 }
 .hg-hero p.hg-lead {
   font: 400 clamp(19px, 1.86vw, 28px)/1.27 "TT Fors Medium", sans-serif;

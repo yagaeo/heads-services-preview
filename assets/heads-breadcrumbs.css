@@ -1,17 +1,27 @@
+@font-face {
+  font-family: "Heads Breadcrumbs";
+  src: url("fonts/tt_fors_bold-webfont.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
 .heads-breadcrumbs {
   --breadcrumb-orange: #ff5100;
-  --breadcrumb-blue: #002b49;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 4px 8px;
-  padding-top: 25px;
-  color: #4c6170;
-  font: 400 14px/1.4 "TT Fors Regular", "TT Fors", sans-serif;
+  --breadcrumb-blue: #4c6170;
+  margin: 0 0 18px;
+  color: var(--breadcrumb-blue);
+  font: 700 14px/1.35 "Heads Breadcrumbs", "TT Fors", sans-serif;
+  overflow-wrap: anywhere;
+}
+
+.heads-breadcrumbs > [aria-hidden="true"] {
+  margin-inline: 4px;
 }
 
 main .heads-breadcrumbs > a {
   color: var(--breadcrumb-orange);
+  font: inherit;
   text-decoration: none;
   text-underline-offset: 3px;
 }
@@ -24,6 +34,4 @@ main .heads-breadcrumbs > a:is(:hover, :focus-visible) {
 
 .heads-breadcrumbs > [aria-current="page"] {
   color: var(--breadcrumb-blue);
-  font-family: "TT Fors Bold", "TT Fors", sans-serif;
-  font-weight: 700;
 }
