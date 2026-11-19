@@ -69,7 +69,10 @@ if (presentation) {
       presentation.showModal();
     });
   }
-  presentation.querySelector('.heads-dialog-close')?.addEventListener('click', () => presentation.close());
+  presentation.querySelector('.heads-dialog-close')?.addEventListener('click', (event) => {
+    event.preventDefault();
+    presentation.close();
+  });
   presentation.addEventListener('click', (event) => {
     if (event.target === presentation) presentation.close();
   });

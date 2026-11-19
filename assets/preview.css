@@ -26,16 +26,30 @@
   position: fixed;
   inset: 0;
   box-sizing: border-box;
-  padding: 2rem;
-  max-width: min(32rem, calc(100% - 2rem));
+  padding: 0;
+  width: min(500px, calc(100% - 2rem));
+  max-width: none;
   margin: auto;
   border: 0;
   background: white;
   color: #111;
 }
 .heads-presentation::backdrop { background-color: #0009; }
-.heads-presentation form label { display: block; margin-block-end: 1rem; }
-.heads-presentation input { width: 100%; }
+#elementor-popup-modal-14570.heads-presentation-content {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  z-index: auto;
+}
+#elementor-popup-modal-14570.heads-presentation-content .dialog-widget-content,
+#elementor-popup-modal-14570.heads-presentation-content .dialog-message {
+  position: relative;
+  box-sizing: border-box;
+  max-width: 100%;
+  width: 100%;
+}
+.heads-presentation .heads-dialog-close { z-index: 1; }
 .heads-preview [data-preview-result] { margin: 1em 0 0; }
 @media (max-width: 767px) {
   .heads-preview .hidden-phone { display: none !important; }
