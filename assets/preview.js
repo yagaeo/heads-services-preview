@@ -1,28 +1,46 @@
 'use strict';
 
-const categories = Array.from(document.querySelectorAll('.service__category[data-service]'));
-for (const category of categories) {
-  const panelId = 'service-' + category.dataset.service;
-  const panel = document.querySelector('.service__details--' + category.dataset.service);
-  if (!panel) continue;
-  panel.id = panelId;
+const services = Array.from(document.querySelectorAll('.service__category[data-service]'), (category) => {
+  const name = category.dataset.service;
+  const panel = document.querySelector('.service__details--' + name);
+  const heading = panel.querySelector('h2');
+  const toggle = document.createElement('button');
+  toggle.type = 'button';
+  toggle.className = 'preview-service-toggle';
+  toggle.textContent = heading.textContent.trim();
+  heading.append(toggle);
+
+  const details = document.createElement('div');
+  details.id = 'service-' + name;
+  while (heading.nextSibling) details.append(heading.nextSibling);
+  heading.after(details);
+
   category.setAttribute('role', 'button');
   category.setAttribute('tabindex', '0');
-  category.setAttribute('aria-controls', panelId);
-  category.setAttribute('aria-expanded', String(category.classList.contains('expanded')));
-  const showCategory = () => {
-    for (const button of categories) {
-      const active = button === category;
-      button.classList.toggle('expanded', active);
-      button.setAttribute('aria-expanded', String(active));
-      document.getElementById('service-' + button.dataset.service)?.classList.toggle('expanded', active);
-    }
-  };
-  category.addEventListener('click', showCategory);
-  category.addEventListener('keydown', (event) => {
+  for (const button of [category, toggle]) button.setAttribute('aria-controls', details.id);
+  return { category, panel, toggle, details };
+});
+
+function setActiveService(selected) {
+  for (const service of services) {
+    const active = service === selected;
+    service.panel.classList.toggle('expanded', active);
+    service.category.classList.toggle('expanded', active);
+    service.details.hidden = !active;
+    service.category.setAttribute('aria-expanded', String(active));
+    service.toggle.setAttribute('aria-expanded', String(active));
+  }
+}
+
+setActiveService(services.find(({ panel }) => panel.classList.contains('expanded')));
+for (const service of services) {
+  const change = () => setActiveService(service.panel.classList.contains('expanded') ? null : service);
+  service.category.addEventListener('click', change);
+  service.toggle.addEventListener('click', change);
+  service.category.addEventListener('keydown', (event) => {
     if (event.key !== ' ' && event.key !== 'Enter') return;
     event.preventDefault();
-    showCategory();
+    change();
   });
 }
 
