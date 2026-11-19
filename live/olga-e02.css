@@ -45,11 +45,11 @@ body {
   font: 400 18px/1.65 "TT Fors", Arial, sans-serif;
 }
 a { color: var(--navy); text-decoration: none; }
-main :is(article, .breadcrumbs) a[href] {
+main article a[href] {
   color: var(--orange);
   text-underline-offset: 3px;
 }
-main :is(article, .breadcrumbs, .article-sidebar) a[href]:is(:hover, :focus-visible) {
+main :is(article, .article-sidebar) a[href]:is(:hover, :focus-visible) {
   text-decoration: underline;
   text-decoration-color: var(--orange);
 }
@@ -133,15 +133,6 @@ summary::-webkit-details-marker { display: none; }
   background: #fff;
   box-shadow: 0 12px 20px rgb(0 43 73 / 8%);
 }
-.breadcrumbs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px 8px;
-  margin-top: 25px;
-  color: var(--muted);
-  font-size: .8rem;
-}
-.breadcrumbs [aria-current] { font-weight: 800; color: var(--navy); }
 .article-hero {
   display: grid;
   grid-template-columns: minmax(0, 650px) minmax(0, 330px);
