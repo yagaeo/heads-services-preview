@@ -12,7 +12,7 @@ Version: 1.0
     font-family: 'TT Fors Regular';
     src: url("https://wellhead.ru/wp-content/themes/total-child-theme/fonts/tt_fors_regular-webfont.eot");
     src: url("https://wellhead.ru/wp-content/themes/total-child-theme/fonts/tt_fors_regular-webfont.eot#iefix") format('embedded-opentype'),
-         url("https://wellhead.ru/wp-content/themes/total-child-theme/fonts/tt_fors_regular-webfont.woff2") format('woff2'),
+         url("fonts/tt_fors_regular-webfont.woff2") format('woff2'),
          url("https://wellhead.ru/wp-content/themes/total-child-theme/fonts/tt_fors_regular-webfont.woff") format('woff'),
          url("https://wellhead.ru/wp-content/themes/total-child-theme/fonts/tt_fors_regular-webfont.ttf") format('truetype'),
          url("https://wellhead.ru/wp-content/themes/total-child-theme/fonts/tt_fors_regular-webfont.svg#tt_forsregular") format('svg');
@@ -24,7 +24,7 @@ Version: 1.0
     font-family: 'TT Fors Medium';
     src: url("https://wellhead.ru/wp-content/themes/total-child-theme/fonts/tt_fors_medium-webfont.eot");
     src: url("https://wellhead.ru/wp-content/themes/total-child-theme/fonts/tt_fors_medium-webfont.eot#iefix") format('embedded-opentype'),
-         url("https://wellhead.ru/wp-content/themes/total-child-theme/fonts/tt_fors_medium-webfont.woff2") format('woff2'),
+         url("fonts/tt_fors_medium-webfont.woff2") format('woff2'),
          url("https://wellhead.ru/wp-content/themes/total-child-theme/fonts/tt_fors_medium-webfont.woff") format('woff'),
          url("https://wellhead.ru/wp-content/themes/total-child-theme/fonts/tt_fors_medium-webfont.ttf") format('truetype'),
          url("https://wellhead.ru/wp-content/themes/total-child-theme/fonts/tt_fors_medium-webfont.svg#tt_forsmedium") format('svg');
@@ -36,7 +36,7 @@ Version: 1.0
     font-family: 'TT Fors Bold';
     src: url("https://wellhead.ru/wp-content/themes/total-child-theme/fonts/tt_fors_bold-webfont.eot");
     src: url("https://wellhead.ru/wp-content/themes/total-child-theme/fonts/tt_fors_bold-webfont.eot#iefix") format('embedded-opentype'),
-         url("https://wellhead.ru/wp-content/themes/total-child-theme/fonts/tt_fors_bold-webfont.woff2") format('woff2'),
+         url("fonts/tt_fors_bold-webfont.woff2") format('woff2'),
          url("https://wellhead.ru/wp-content/themes/total-child-theme/fonts/tt_fors_bold-webfont.woff") format('woff'),
          url("https://wellhead.ru/wp-content/themes/total-child-theme/fonts/tt_fors_bold-webfont.ttf") format('truetype'),
          url("https://wellhead.ru/wp-content/themes/total-child-theme/fonts/tt_fors_bold-webfont.svg#tt_forsbold") format('svg');
@@ -48,7 +48,7 @@ Version: 1.0
     font-family: 'TT Fors Extrabold';
     src: url("https://wellhead.ru/wp-content/themes/total-child-theme/fonts/tt_fors_extrabold-webfont.eot");
     src: url("https://wellhead.ru/wp-content/themes/total-child-theme/fonts/tt_fors_extrabold-webfont.eot#iefix") format('embedded-opentype'),
-         url("https://wellhead.ru/wp-content/themes/total-child-theme/fonts/tt_fors_extrabold-webfont.woff2") format('woff2'),
+         url("fonts/tt_fors_extrabold-webfont.woff2") format('woff2'),
          url("https://wellhead.ru/wp-content/themes/total-child-theme/fonts/tt_fors_extrabold-webfont.woff") format('woff'),
          url("https://wellhead.ru/wp-content/themes/total-child-theme/fonts/tt_fors_extrabold-webfont.ttf") format('truetype'),
          url("https://wellhead.ru/wp-content/themes/total-child-theme/fonts/tt_fors_extrabold-webfont.svg#tt_forsextrabold") format('svg');
