@@ -45,7 +45,7 @@ body {
   font: 400 18px/1.65 "TT Fors", Arial, sans-serif;
 }
 a { color: var(--navy); text-decoration: none; }
-main :is(article, .breadcrumbs, .article-sidebar) a[href] {
+main :is(article, .breadcrumbs) a[href] {
   color: var(--orange);
   text-underline-offset: 3px;
 }
@@ -214,15 +214,17 @@ figcaption strong { display: block; margin: 0 0 8px; }
 .toc-desktop a, .toc-mobile a {
   display: block;
   padding: 11px 12px;
+  color: var(--navy);
   font-size: .87rem;
   line-height: 1.38;
   border-left: 2px solid var(--line);
 }
-.toc-desktop a:hover, .toc-mobile a:hover, .toc-desktop a[aria-current="location"] {
+:is(.toc-desktop, .toc-mobile) a[aria-current="location"] {
   background: #fff3ec;
   border-left-color: var(--orange);
+  color: var(--orange);
+  font-weight: 500;
 }
-.toc-desktop a[aria-current="location"] { font-weight: 500; }
 .toc-mobile { display: none; }
 .article-intro { font-size: inherit; }
 article > section { margin-top: clamp(34px, 5vw, 64px); scroll-margin-top: calc(var(--header-height) + 18px); }

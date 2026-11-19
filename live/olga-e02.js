@@ -1,17 +1,20 @@
-const tocLinks = [...document.querySelectorAll('.toc-desktop a')];
-const sections = tocLinks.map((link) => document.getElementById(link.hash.slice(1)));
+const mobileContents = document.querySelector('.toc-mobile');
+const tocLinks = [...document.querySelectorAll('.toc-desktop a')].map((link) => [
+  link,
+  mobileContents.querySelector(`a[href="${link.hash}"]`),
+]);
+const sections = tocLinks.map(([link]) => document.getElementById(link.hash.slice(1)));
 const header = document.querySelector('.site-header');
 let framePending = false;
-let activeLink = null;
+let activeIndex = -1;
 
 function updateContents() {
   const readingLine = header.getBoundingClientRect().bottom + 110;
   const index = sections.findLastIndex((section) => section.getBoundingClientRect().top < readingLine);
-  const nextLink = tocLinks[index];
-  if (activeLink !== nextLink) {
-    activeLink?.removeAttribute('aria-current');
-    nextLink?.setAttribute('aria-current', 'location');
-    activeLink = nextLink;
+  if (activeIndex !== index) {
+    tocLinks[activeIndex]?.forEach((link) => link?.removeAttribute('aria-current'));
+    tocLinks[index]?.forEach((link) => link?.setAttribute('aria-current', 'location'));
+    activeIndex = index;
   }
   framePending = false;
 }
@@ -22,7 +25,6 @@ function queueContentsUpdate() {
   requestAnimationFrame(updateContents);
 }
 
-const mobileContents = document.querySelector('.toc-mobile');
 mobileContents.addEventListener('click', (event) => {
   if (event.target.closest('a')) mobileContents.open = false;
 });

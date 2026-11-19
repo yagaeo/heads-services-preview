@@ -115,10 +115,11 @@
 .heads-geo :is(.hg-nav a, .hg-link) { font-family: "TT Fors Bold", sans-serif; }
 .heads-geo .hg-nav a { font-size: 15px; }
 .heads-geo a[href]:is(.hg-link, .hg-nav a, .hg-crumb, p a, li a):not(.hg-button) {
-  color: var(--hg-orange);
+  color: var(--hg-link-color, var(--hg-orange));
   text-decoration: none;
   text-underline-offset: 4px;
 }
+.heads-geo .hs-services-list { --hg-link-color: var(--hg-blue); }
 .heads-geo a[href]:is(.hg-link, .hg-nav a, .hg-crumb, p a, li a):not(.hg-button):is(:hover, :focus-visible) {
   text-decoration: underline;
   text-decoration-color: var(--hg-orange);
