@@ -53,6 +53,9 @@ main :is(article, .breadcrumbs, .article-sidebar) a[href]:is(:hover, :focus-visi
   text-decoration: underline;
   text-decoration-color: var(--orange);
 }
+main .article-sidebar a[href]:is(:hover, :focus-visible) {
+  text-decoration-color: currentColor;
+}
 img { display: block; max-width: 100%; }
 h1, h2, p, figure { margin: 0; }
 h1, h2 { color: var(--navy); }
