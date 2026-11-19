@@ -129,7 +129,7 @@
   gap: clamp(12px, 2vw, 22px);
 }
 .hg-grid--two { grid-template-columns: repeat(2, minmax(0,1fr)); }
-.hg-card { background: var(--hg-paper); border-top: 2px solid var(--hg-line); padding: clamp(18px, 2.6vw, 33px); min-width: 0; }
+.hg-card { background: #fff; border-top: 2px solid var(--hg-line); padding: clamp(18px, 2.6vw, 33px); min-width: 0; }
 .hg-card h3 + * { margin-top: 10px; }
 .hg-card .hg-link { display: inline-block; margin-top: 8px; }
 .hg-detail-row { max-width: 860px; }

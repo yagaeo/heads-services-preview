@@ -3,9 +3,6 @@
 .heads-reviewed .hg-hero h2.hg-lead {
   color: var(--hg-orange);
 }
-.heads-overview #geo-scenarios .hg-card {
-  background: #fff;
-}
 .heads-reviewed .hg-case {
   display: flex;
   flex-direction: column;
