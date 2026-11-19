@@ -1,5 +1,33 @@
 'use strict';
 
+const headerHolder = document.getElementById('site-header-sticky-wrapper');
+const siteHeader = document.getElementById('site-header');
+if (headerHolder && siteHeader) {
+  const updateHeader = () => {
+    const sticky = headerHolder.getBoundingClientRect().top < 0;
+    headerHolder.style.height = sticky ? siteHeader.offsetHeight + 'px' : '';
+    headerHolder.classList.toggle('not-sticky', !sticky);
+    headerHolder.classList.toggle('is-sticky', sticky);
+  };
+  window.addEventListener('scroll', updateHeader, { passive: true });
+  window.addEventListener('resize', updateHeader);
+  updateHeader();
+}
+
+const contactText = document.getElementById('printText');
+if (contactText && window.Typed) {
+  contactText.textContent = '';
+  new window.Typed(contactText, {
+    strings: ['Напишите нам!'],
+    typeSpeed: 60,
+    loop: true,
+    backDelay: 2500,
+    startDelay: 600,
+    backSpeed: 0,
+    smartBackspace: true,
+  });
+}
+
 const services = Array.from(document.querySelectorAll('.service__category[data-service]'), (category) => {
   const name = category.dataset.service;
   const panel = document.querySelector('.service__details--' + name);
@@ -7,7 +35,7 @@ const services = Array.from(document.querySelectorAll('.service__category[data-s
   const toggle = document.createElement('button');
   toggle.type = 'button';
   toggle.className = 'preview-service-toggle';
-  toggle.textContent = heading.textContent.trim();
+  toggle.setAttribute('aria-label', heading.textContent.trim());
   heading.append(toggle);
 
   const details = document.createElement('div');
@@ -60,8 +88,17 @@ for (const link of document.querySelectorAll('a[data-vc-accordion]')) {
 const menu = document.getElementById('sidr-main');
 const toggleMenu = document.querySelector('.mobile-menu-toggle');
 if (menu && toggleMenu) {
+  const overlay = document.createElement('div');
+  overlay.className = 'wpex-sidr-overlay wpex-custom-cursor';
+  overlay.hidden = true;
+  overlay.setAttribute('aria-hidden', 'true');
+  menu.before(overlay);
+  menu.classList.add('wpex-mobile-menu');
+
   const setMenu = (open) => {
     menu.hidden = !open;
+    overlay.hidden = !open;
+    toggleMenu.classList.toggle('wpex-active', open);
     toggleMenu.setAttribute('aria-expanded', String(open));
   };
   toggleMenu.setAttribute('aria-controls', menu.id);
@@ -69,6 +106,7 @@ if (menu && toggleMenu) {
     event.preventDefault();
     setMenu(menu.hidden);
   });
+  overlay.addEventListener('click', () => setMenu(false));
   menu.addEventListener('click', (event) => {
     if (event.target.closest('a')) setMenu(false);
   });
