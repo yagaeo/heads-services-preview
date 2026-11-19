@@ -7,6 +7,13 @@
 }
 @font-face {
   font-family: "TT Fors";
+  src: url("../assets/fonts/tt_fors_medium-webfont.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: "TT Fors";
   src: url("../assets/fonts/tt_fors_bold-webfont.woff2") format("woff2");
   font-style: normal;
   font-weight: 700;
@@ -41,7 +48,7 @@ a:hover { color: #a3380c; }
 img { display: block; max-width: 100%; }
 h1, h2, p, figure { margin: 0; }
 h1, h2 { color: var(--navy); line-height: 1.08; letter-spacing: -.035em; }
-h1 { font-size: clamp(2rem, 4.3vw, 4.25rem); font-weight: 800; letter-spacing: -.04em; overflow-wrap: break-word; }
+h1 { font-size: clamp(2rem, 4.3vw, 4.25rem); font-weight: 700; letter-spacing: -.04em; overflow-wrap: break-word; }
 h2 { font-size: clamp(1.62rem, 2.8vw, 2.55rem); font-weight: 800; }
 p + p { margin-top: .8em; }
 [hidden] { display: none !important; }
@@ -192,12 +199,16 @@ figcaption strong { color: var(--navy); display: block; margin: 0 0 8px; font-si
   color: #b63c00;
   border-left-color: var(--orange);
 }
-.toc-desktop a[aria-current="location"] { font-weight: 800; }
+.toc-desktop a[aria-current="location"] { font-weight: 500; }
 .toc-mobile { display: none; }
 .article-intro { font-size: inherit; }
 article > section { margin-top: clamp(34px, 5vw, 64px); scroll-margin-top: calc(var(--header-height) + 18px); }
 article h2 { margin: 0 0 17px; color: var(--orange); }
-article p a { font-weight: 800; }
+article > section:not(.author-card) > h2 {
+  text-transform: uppercase;
+  overflow-wrap: break-word;
+}
+article :is(p, li) :is(strong, b, a) { font-weight: 500; }
 article ul { margin-block: .7em; padding-left: 1.3em; }
 article li { padding-left: .16em; margin-block: .38em; }
 article li::marker { color: #ad390a; }
@@ -217,7 +228,7 @@ article figure img { width: 100%; height: auto; border-radius: 3px; }
   padding: 15px 0;
   color: var(--navy);
   font-size: 1.15rem;
-  font-weight: 800;
+  font-weight: 500;
 }
 .faq summary::after { content: "+"; padding-right: 4px; color: var(--orange); font-size: 1.42rem; line-height: 1.15; font-weight: 400; }
 .faq details[open] summary::after { content: "−"; }
