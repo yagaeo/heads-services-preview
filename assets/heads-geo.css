@@ -7,6 +7,11 @@
   --hg-muted: #4c6170;
   --hg-line: #dbe4e9;
   --hg-paper: #f3f7f8;
+  --hg-heading-size: 30px;
+  --hg-h1-height: 33px;
+  --hg-h2-height: 1.5;
+  --hg-h3-size: 21px;
+  --hg-contact-title-size: 30px;
   color: var(--hg-ink);
   font: 400 16px/1.55 "TT Fors Regular", sans-serif;
   padding: 0 0 76px;
@@ -17,13 +22,24 @@
   color: var(--hg-blue);
   font-family: "TT Fors Extrabold", sans-serif;
   font-weight: 400;
-  text-transform: none;
-  letter-spacing: -.025em;
+  text-transform: uppercase;
+  letter-spacing: normal;
   overflow-wrap: anywhere;
 }
-.heads-geo h1 { font-size: clamp(34px, 4.35vw, 67px); line-height: 1.04; overflow-wrap: anywhere; }
-.heads-geo h2 { font-size: clamp(26px, 3.4vw, 46px); line-height: 1.12; max-width: 1050px; }
-.heads-geo h3 { font-size: clamp(19px, 2vw, 27px); line-height: 1.15; }
+.heads-geo h1 { font-size: var(--hg-heading-size); line-height: var(--hg-h1-height); }
+.heads-geo h2 {
+  font-family: "TT Fors Bold", sans-serif;
+  font-size: var(--hg-heading-size);
+  line-height: var(--hg-h2-height);
+  max-width: 1050px;
+}
+.heads-geo h3 { font-size: var(--hg-h3-size); line-height: 1.5; }
+.heads-geo.heads-overview h2 { font-family: "TT Fors Extrabold", sans-serif; }
+.heads-geo .hg-contact h2 {
+  font-family: "TT Fors Extrabold", sans-serif;
+  font-size: var(--hg-contact-title-size);
+  line-height: 1.4;
+}
 .heads-geo p { color: inherit; margin: 0; }
 .heads-geo p + p { margin-top: .75em; }
 .heads-geo a:focus-visible, .heads-geo summary:focus-visible {
@@ -46,8 +62,10 @@
   text-decoration: none;
   color: var(--hg-muted);
 }
-.hg-hero .hg-lead {
+.hg-hero p.hg-lead {
   font: 400 clamp(19px, 1.86vw, 28px)/1.27 "TT Fors Medium", sans-serif;
+}
+.hg-hero .hg-lead {
   color: var(--hg-blue);
   margin: 17px 0 9px;
 }
@@ -211,7 +229,7 @@
   flex-wrap: wrap;
   gap: 13px 24px;
 }
-.hg-related h2 { width: 100%; font-size: clamp(23px,2.6vw,32px); }
+.hg-related h2 { width: 100%; }
 .hg-contact { border-top: 1px solid var(--hg-line); padding-top: 26px; }
 .hg-contact .hg-section-head { margin-bottom: 15px; }
 .hg-contact #new-clients { margin-top: 0; }
@@ -219,10 +237,29 @@
 @media (max-width: 1040px) {
   .hg-services { grid-template-columns: repeat(2,minmax(0,1fr)); }
 }
+@media (max-width: 1024px) {
+  .heads-geo { --hg-heading-size: 25px; }
+}
+@media (max-width: 959px) {
+  .heads-geo { --hg-heading-size: 21px; }
+  .heads-geo.heads-overview { --hg-heading-size: 20px; }
+}
 @media (max-width: 767px) {
-  .heads-geo { padding-bottom: 46px; }
-  .heads-geo h1 { font-size: clamp(24px, 7.9vw, 38px); }
-  .heads-geo h2 { font-size: clamp(22px, 6.55vw, 34px); }
+  .heads-geo {
+    --hg-heading-size: 19px;
+    --hg-h1-height: 1;
+    --hg-h2-height: 1;
+    --hg-h3-size: 16px;
+    --hg-contact-title-size: 24px;
+    padding-bottom: 46px;
+  }
+  .heads-geo h1 { font-family: "TT Fors Bold", sans-serif; }
+  .heads-geo.heads-overview {
+    --hg-heading-size: 15px;
+    --hg-h1-height: 18px;
+    --hg-h2-height: normal;
+  }
+  .heads-geo.heads-overview h1 { font-family: "TT Fors Extrabold", sans-serif; }
   .heads-geo [id] { scroll-margin-top: 81px; }
   .hg-hero, .hg-grid, .hg-case-grid, .hg-stage-grid { grid-template-columns: minmax(0,1fr); }
   .hg-hero { padding-top: 26px; }
