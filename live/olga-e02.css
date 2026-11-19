@@ -152,9 +152,7 @@ summary::-webkit-details-marker { display: none; }
 .hero-figure img {
   width: 100%;
   height: auto;
-  aspect-ratio: 4 / 5;
   object-fit: contain;
-  background: #fff;
 }
 figcaption {
   padding: 24px 28px;
@@ -162,9 +160,9 @@ figcaption {
   line-height: 1.5;
   color: #536a7a;
 }
-.hero-figure figcaption { border-top: 1px solid var(--line); padding: 22px 27px 25px; }
+.hero-figure figcaption { border-top: 1px solid var(--line); padding: 19px 22px 23px; }
 figcaption strong { color: var(--navy); display: block; margin: 0 0 8px; font-size: 1.27rem; line-height: 1.18; font-weight: 800; }
-.hero-figure figcaption strong { font-size: 1.45rem; }
+.hero-figure figcaption strong { font-size: 1.35rem; }
 .figure-link { margin-top: 8px; font-weight: 800; }
 .article-layout {
   display: grid;
@@ -262,7 +260,6 @@ article figure img { width: 100%; height: auto; border-radius: 3px; }
   .article-hero, .article-layout { grid-template-columns: minmax(0, 1fr); }
   .article-hero { gap: 24px; }
   .hero-figure { max-width: 440px; }
-  .hero-figure img { aspect-ratio: auto; }
   .hero-figure figcaption, article figure figcaption { padding: 17px 19px; }
   .article-layout { gap: 24px; }
   article figure { grid-template-columns: 1fr; }
